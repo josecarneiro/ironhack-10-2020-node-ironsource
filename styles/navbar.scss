@@ -1,0 +1,23 @@
+@import 'variables';
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  color: $grey;
+  border-right: 1px solid lighten($grey, 72%);
+  margin-right: 2em;
+  a,
+  button {
+    padding: 1em 0.75em;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    &:hover {
+      background-color: lighten($grey, 76%);
+    }
+  }
+  button {
+    border: 0;
+    text-align: left;
+    box-shadow: 0 0;
+  }
+}

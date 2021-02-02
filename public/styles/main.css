@@ -1,0 +1,218 @@
+* {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  padding-top: 2em;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  max-width: 80em;
+  margin: 0 auto;
+}
+
+body .navbar {
+  flex: 0 0 15em;
+}
+
+body .page {
+  flex: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 1em 0;
+  line-height: inherit;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resource-item {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #e9ebed;
+}
+
+.resource-item a {
+  flex: 1;
+  display: flex;
+  padding: 1em 0;
+}
+
+.resource-item a h4 {
+  font-size: 1.5em;
+}
+
+.resource-item img {
+  margin-right: 2em;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.resource-item button {
+  height: 100%;
+  width: 6rem;
+  padding: 0;
+  border: 0;
+  box-shadow: 0 0;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.resource-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resource-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.resource-info h4 {
+  margin: 0;
+}
+
+.resource-info span {
+  margin-left: 1em;
+  text-transform: uppercase;
+  color: grey;
+  font-weight: 700;
+}
+
+.topic-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.topic-item {
+  margin-right: 0.5em;
+  padding: 0.25em 0.5em;
+  color: white;
+  background-color: #ffcc33;
+  text-transform: uppercase;
+  border-radius: 0.25em;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.topic-item-javascript {
+  background-color: #ffc61a;
+}
+
+.topic-item-css {
+  background-color: #ff3355;
+}
+
+.topic-item-html {
+  background-color: #ff9c1a;
+}
+
+.topic-item-mongodb {
+  background-color: #12a11e;
+}
+
+.topic-item-canvas {
+  background-color: #be33ff;
+}
+
+.topic-item-react {
+  background-color: #2060df;
+}
+
+.topic-item-vue {
+  background-color: #5af261;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  color: #2e3538;
+  border-right: 1px solid #e9ebed;
+  margin-right: 2em;
+}
+
+.navbar a,
+.navbar button {
+  padding: 1em 0.75em;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.navbar a:hover,
+.navbar button:hover {
+  background-color: #f4f5f6;
+}
+
+.navbar button {
+  border: 0;
+  text-align: left;
+  box-shadow: 0 0;
+}
+
+.profile-picture {
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'],
+input[type='url'],
+input[type='file'],
+textarea,
+button,
+select {
+  padding: 1em;
+  margin: 0;
+  margin-bottom: 1em;
+  border: 1px solid #d5dadd;
+  border-radius: 0.25em;
+  box-shadow: 0 0.125em 0.5em -0.25em #abb6ba;
+  background-color: transparent;
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+label {
+  margin-bottom: 0.25em;
+}
