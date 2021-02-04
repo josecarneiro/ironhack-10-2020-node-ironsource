@@ -44,6 +44,71 @@ p {
   line-height: inherit;
 }
 
+.navbar {
+  display: flex;
+  flex-direction: column;
+  color: #2e3538;
+  border-right: 1px solid #e9ebed;
+  margin-right: 2em;
+}
+
+.navbar a,
+.navbar button {
+  padding: 1em 0.75em;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.navbar a:hover,
+.navbar button:hover {
+  background-color: #f4f5f6;
+}
+
+.navbar button {
+  border: 0;
+  text-align: left;
+  box-shadow: 0 0;
+}
+
+.profile-picture {
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'],
+input[type='url'],
+input[type='file'],
+textarea,
+button,
+select,
+.btn {
+  display: flex;
+  padding: 1em;
+  margin: 0;
+  margin-bottom: 1em;
+  border: 1px solid #d5dadd;
+  border-radius: 0.25em;
+  box-shadow: 0 0.125em 0.5em -0.25em #abb6ba;
+  background-color: transparent;
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+label {
+  margin-bottom: 0.25em;
+}
+
 .resource-list {
   list-style: none;
   padding: 0;
@@ -94,18 +159,28 @@ p {
 .resource-info {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5em;
 }
 
-.resource-info h4 {
+.resource-info .resource-title {
   margin: 0;
 }
 
-.resource-info span {
+.resource-info .resource-category {
   margin-left: 1em;
+}
+
+.resource-meta {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+
+.resource-category {
   text-transform: uppercase;
-  color: grey;
   font-weight: 700;
+}
+
+.resource-media img {
+  width: 4em;
 }
 
 .topic-list {
@@ -152,67 +227,4 @@ p {
 
 .topic-item-vue {
   background-color: #5af261;
-}
-
-.navbar {
-  display: flex;
-  flex-direction: column;
-  color: #2e3538;
-  border-right: 1px solid #e9ebed;
-  margin-right: 2em;
-}
-
-.navbar a,
-.navbar button {
-  padding: 1em 0.75em;
-  cursor: pointer;
-  transition: background-color 0.25s ease;
-}
-
-.navbar a:hover,
-.navbar button:hover {
-  background-color: #f4f5f6;
-}
-
-.navbar button {
-  border: 0;
-  text-align: left;
-  box-shadow: 0 0;
-}
-
-.profile-picture {
-  width: 6em;
-  height: 6em;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-input[type='text'],
-input[type='number'],
-input[type='email'],
-input[type='password'],
-input[type='url'],
-input[type='file'],
-textarea,
-button,
-select {
-  padding: 1em;
-  margin: 0;
-  margin-bottom: 1em;
-  border: 1px solid #d5dadd;
-  border-radius: 0.25em;
-  box-shadow: 0 0.125em 0.5em -0.25em #abb6ba;
-  background-color: transparent;
-  font: inherit;
-  line-height: inherit;
-  color: inherit;
-}
-
-label {
-  margin-bottom: 0.25em;
 }

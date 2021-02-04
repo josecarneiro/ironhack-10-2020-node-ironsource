@@ -13,7 +13,9 @@ input[type='url'],
 input[type='file'],
 textarea,
 button,
-select {
+select,
+.btn {
+  display: flex;
   padding: 1em;
   margin: 0;
   margin-bottom: 1em;

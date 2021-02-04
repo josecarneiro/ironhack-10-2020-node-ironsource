@@ -1,0 +1,45 @@
+.topic-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.topic-item {
+  margin-right: 0.5em;
+  padding: 0.25em 0.5em;
+  color: white;
+  background-color: hsl(45, 100%, 60%);
+  text-transform: uppercase;
+  border-radius: 0.25em;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.topic-item-javascript {
+  background-color: hsl(45, 100%, 55%);
+}
+
+.topic-item-css {
+  background-color: hsl(350, 100%, 60%);
+}
+
+.topic-item-html {
+  background-color: hsl(34, 100%, 55%);
+}
+
+.topic-item-mongodb {
+  background-color: hsl(125, 80%, 35%);
+}
+
+.topic-item-canvas {
+  background-color: hsl(281, 100%, 60%);
+}
+
+.topic-item-react {
+  background-color: hsl(220, 75%, 50%);
+}
+
+.topic-item-vue {
+  background-color: hsl(123, 85%, 65%);
+}

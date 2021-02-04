@@ -1,16 +1,23 @@
-<h1>{{resource.title}}</h1>
-<h4>{{resource.category}}</h4>
-<small>
-{{#each resource.topics}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}
-</small>
-</br>
-<a href="{{resource.url}}" target="_blank">Go there -></a>
-</br>
-<small>Difficulty: {{resource.difficulty}}</small>
+<aside>
 {{#if resource.image}}
-  <img src="{{resource.image}}" alt="{{resource.title}}">
+  <figure class="resource-media">
+    <img src="{{resource.image}}" alt="{{resource.title}}">
+  </figure>
 {{/if}}
-</br>
-<a href="/resource/{{resource._id}}/delete">Delete Resource</a>
-</br>
-<a href="/resource/{{resource._id}}/update">Update Resource</a>
+</aside>
+<section>
+
+  <h1>{{resource.title}}</h1>
+  <h4>{{resource.category}}</h4>
+  <small>
+  {{#each resource.topics}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}
+  </small>
+  </br>
+  <a href="{{resource.url}}" target="_blank">Go there -></a>
+  </br>
+  <small>Difficulty: {{resource.difficulty}}</small>
+  </br>
+  <a href="/resource/{{resource._id}}/delete" class="btn">Delete Resource</a>
+  </br>
+  <a href="/resource/{{resource._id}}/update" class="btn">Update Resource</a>
+</section>

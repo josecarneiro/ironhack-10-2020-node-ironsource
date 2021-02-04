@@ -7,10 +7,10 @@
         {{#if image}}<img src="{{image}}" alt="{{title}}">{{/if}}
         <div class="resource-contents">
           <div class="resource-info">
-            <h4>{{title}}</h4>
-            <span class="category">{{category}}</span>
+            <h4 class="resource-title">{{title}}</h4>
+            {{!-- <span class="resource-category">{{category}}</span> --}}
           </div>
-          <small>by {{creator.name}}</small>
+          <small class="resource-meta"><span class="resource-category">{{category}}</span> | Published by {{creator.name}} on 28/01/2021</small>
           <ul class="topic-list">
             {{#each topics}}
               <li class="topic-item topic-item-{{this}}">{{this}}</li>

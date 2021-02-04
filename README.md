@@ -36,3 +36,6 @@
 - Add pagination
 - Add comments to resources.
 - Send welcome email to user on account creation.
+
+- Transfer data from local database to remote
+- Use papertrail
