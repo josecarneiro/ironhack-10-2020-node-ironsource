@@ -17,9 +17,9 @@ Error GET /error Display error message
 
 ## To Do
 
-- Add titles at the top of each authentication view
+- Add titles at the top of each authentication view.
 - Move resource item and topics into partials.
-- Style topics in separate stylesheet
+- Style topics in separate stylesheet.
 - Place authentication views into authentication directory.
 - Display appropriate error messages in error template.
 - Move authentication to bottom of navbar.
@@ -29,3 +29,4 @@ Error GET /error Display error message
 - Add 'use strict' where missing.
 - Add sorting algorythm.
 - Change promise chains into async/await.
+- Add comments to resources.
