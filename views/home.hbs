@@ -2,25 +2,15 @@
 
 <ul class="resource-list">
   {{#each resources}}
-    <li id="resource-{{_id}}" class="resource-item">
-      <a href="/resource/{{_id}}">
-        {{#if image}}<img src="{{image}}" alt="{{title}}">{{/if}}
-        <div class="resource-contents">
-          <div class="resource-info">
-            <h4 class="resource-title">{{title}}</h4>
-            {{!-- <span class="resource-category">{{category}}</span> --}}
-          </div>
-          <small class="resource-meta"><span class="resource-category">{{category}}</span> | Published by {{creator.name}} on 28/01/2021</small>
-          <ul class="topic-list">
-            {{#each topics}}
-              <li class="topic-item topic-item-{{this}}">{{this}}</li>
-            {{/each}}
-          </ul>
-        </div>
-      </a>
-      <form method="POST" action="/resource/{{_id}}/upvote">
-        <button>{{points}}</button>
-      </form>
-    </li>
+    {{> resourceitem}}
   {{/each}}
 </ul>
+
+<div class="btn-group">
+  {{#if previousPage}}
+    <a href="/?page={{previousPage}}" class="btn">Previous</a>
+  {{/if}}
+  {{#if nextPage}}
+    <a href="/?page={{nextPage}}" class="btn">Next</a>
+  {{/if}}
+</div>

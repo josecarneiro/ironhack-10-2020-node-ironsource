@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <a href="/">IronSource</a>
+  {{#if user}}
+    <a href="/profile/{{user._id}}">{{user.name}}'s Profile</a>
+    <a href="/resource/create">Add a Resource</a>
+    <footer>
+      <form method="POST" action="/authentication/log-out">
+        <button>Log Out</button>
+      </form>
+    </footer>
+    {{else}}
+    <footer>
+      <a href="/authentication/sign-up">Create an Account</a>
+      <a href="/authentication/log-in">Log In</a>
+    </footer>
+  {{/if}}
+</nav>

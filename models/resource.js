@@ -1,3 +1,5 @@
+'use strict';
+
 const mongoose = require('mongoose');
 
 const resourceSchema = new mongoose.Schema(
@@ -39,7 +41,25 @@ const resourceSchema = new mongoose.Schema(
     creator: {
       type: mongoose.Types.ObjectId,
       ref: 'User'
-    }
+    },
+    comments: [
+      {
+        message: {
+          type: String,
+          required: true
+        },
+        creator: {
+          type: mongoose.Types.ObjectId,
+          required: true,
+          ref: 'User'
+        },
+        resource: {
+          type: mongoose.Types.ObjectId,
+          required: true,
+          ref: 'Resource'
+        }
+      }
+    ]
   },
   {
     timestamps: {

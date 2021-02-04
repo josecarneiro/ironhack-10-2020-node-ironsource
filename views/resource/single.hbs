@@ -6,9 +6,9 @@
 {{/if}}
 </aside>
 <section>
-
   <h1>{{resource.title}}</h1>
   <h4>{{resource.category}}</h4>
+  <a href="/profile/{{resource.creator._id}}">{{resource.creator.name}}</a>
   <small>
   {{#each resource.topics}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}
   </small>
@@ -17,7 +17,29 @@
   </br>
   <small>Difficulty: {{resource.difficulty}}</small>
   </br>
-  <a href="/resource/{{resource._id}}/delete" class="btn">Delete Resource</a>
-  </br>
-  <a href="/resource/{{resource._id}}/update" class="btn">Update Resource</a>
+  {{#if authenticatedUserIsOwner}}
+    <div class="btn-group">
+      <a href="/resource/{{resource._id}}/delete" class="btn">Delete Resource</a>
+      <a href="/resource/{{resource._id}}/update" class="btn">Update Resource</a>
+    </div>
+  {{/if}}
 </section>
+
+<footer>
+  <h3>Leave a comment</h3>
+  <form action="/resource/{{resource._id}}/comment" method="POST">
+    <label for="input-message">Message</label>
+    <textarea name="message" id="input-message" placeholder="Write a comment..."></textarea>
+
+    <button>Submit Comment</button>
+  </form>
+
+  <ul class="comment-list">
+    {{#each comments}}
+      <li class="comment-item">
+        <p>{{message}}</p>
+        <span>Published by {{creator.name}} on {{{ date creationDate "DD/MM/YYYY" }}} at {{{ date creationDate "HH:mm" }}}</span>
+      </li>
+    {{/each}}
+  </ul>
+</footer>

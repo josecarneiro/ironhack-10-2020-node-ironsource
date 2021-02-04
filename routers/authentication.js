@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const bcryptjs = require('bcryptjs');
 const uploadMiddleware = require('./../middleware/file-upload');
@@ -6,7 +8,7 @@ const User = require('./../models/user');
 const router = new express.Router();
 
 router.get('/sign-up', (req, res, next) => {
-  res.render('sign-up');
+  res.render('authentication/sign-up');
 });
 
 router.post(
@@ -14,11 +16,15 @@ router.post(
   uploadMiddleware.single('picture'),
   (req, res, next) => {
     const data = req.body;
+    if (!data.password || data.password.length < 8) {
+      next(new Error('Password is too short.'));
+      return;
+    }
     // Lets see if there's already a user with that email in the database
     User.findOne({
       email: data.email
     })
-      .then(user => {
+      .then((user) => {
         if (user) {
           // "Throw" error that will be caught by callback passed to catch method
           throw new Error('There is already a user with that email.');
@@ -31,7 +37,7 @@ router.post(
           return bcryptjs.hash(data.password, 10);
         }
       })
-      .then(passwordHashAndSalt => {
+      .then((passwordHashAndSalt) => {
         // After having hashed the password
         // we want to go ahead and create a new user account
         let picture;
@@ -48,18 +54,18 @@ router.post(
           picture: picture
         });
       })
-      .then(user => {
+      .then((user) => {
         req.session.userId = user._id;
         res.redirect('/profile');
       })
-      .catch(error => {
+      .catch((error) => {
         next(error);
       });
   }
 );
 
 router.get('/log-in', (req, res, next) => {
-  res.render('log-in');
+  res.render('authentication/log-in');
 });
 
 router.post('/log-in', (req, res, next) => {
@@ -68,7 +74,7 @@ router.post('/log-in', (req, res, next) => {
   User.findOne({
     email: data.email
   })
-    .then(doc => {
+    .then((doc) => {
       user = doc;
       if (user) {
         return bcryptjs.compare(data.password, user.passwordHashAndSalt);
@@ -76,15 +82,15 @@ router.post('/log-in', (req, res, next) => {
         throw new Error('There is no user registered with that email.');
       }
     })
-    .then(result => {
+    .then((result) => {
       if (result) {
         req.session.userId = user._id;
-        res.redirect('/profile');
+        res.redirect(`/profile/${user._id}`);
       } else {
         throw new Error("The password doesn't match.");
       }
     })
-    .catch(error => {
+    .catch((error) => {
       next(error);
     });
 });

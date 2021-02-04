@@ -1,0 +1,15 @@
+<li id="resource-{{_id}}" class="resource-item">
+  <a href="/resource/{{_id}}">
+    {{#if image}}<img src="{{image}}" alt="{{title}}">{{/if}}
+    <div class="resource-contents">
+      <div class="resource-info">
+        <h4 class="resource-title">{{title}}</h4>
+      </div>
+      <small class="resource-meta"><span class="resource-category">{{category}}</span>  | Published by {{creator.name}} on {{{ date creationDate "DD/MM/YYYY" }}} at {{{ date creationDate "HH:mm" }}}</small>
+      {{> topiclist}}
+    </div>
+  </a>
+  <form method="POST" action="/resource/{{_id}}/upvote">
+    <button>{{points}}</button>
+  </form>
+</li>

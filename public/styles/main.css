@@ -16,10 +16,11 @@ body {
 }
 
 body .navbar {
-  flex: 0 0 15em;
+  width: 15em;
 }
 
 body .page {
+  margin-left: 17em;
   flex: 1;
 }
 
@@ -28,9 +29,27 @@ a {
   text-decoration: none;
 }
 
+p a {
+  text-decoration: underline;
+}
+
 img {
   max-width: 100%;
   display: block;
+}
+
+.btn-group {
+  display: flex;
+  margin-top: 2em;
+}
+
+.btn-group .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+.btn-group .btn:not(:last-child) {
+  margin-right: 1em;
 }
 
 h1,
@@ -45,6 +64,10 @@ p {
 }
 
 .navbar {
+  position: fixed;
+  bottom: 0;
+  height: 100vh;
+  padding-top: 2em;
   display: flex;
   flex-direction: column;
   color: #2e3538;
@@ -70,11 +93,31 @@ p {
   box-shadow: 0 0;
 }
 
+.navbar footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
 .profile-picture {
   width: 6em;
   height: 6em;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.profile-information {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.profile-information img {
+  margin-right: 1em;
+}
+
+.profile-information h1 {
+  margin-bottom: 0;
 }
 
 form {
@@ -148,6 +191,9 @@ label {
   margin-bottom: 0;
   cursor: pointer;
   font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .resource-contents {
@@ -227,4 +273,18 @@ label {
 
 .topic-item-vue {
   background-color: #5af261;
+}
+
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment-item {
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #d5dadd;
+  border-radius: 0.25em;
+  box-shadow: 0 0.125em 0.5em -0.25em #abb6ba;
 }

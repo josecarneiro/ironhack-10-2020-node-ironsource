@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const path = require('path');
 const nodeSassMiddleware = require('node-sass-middleware');
@@ -7,16 +9,22 @@ const expressSession = require('express-session');
 const connectMongo = require('connect-mongo');
 const MongoStore = connectMongo(expressSession);
 const mongoose = require('mongoose');
+const hbs = require('hbs');
 
 const baseRouter = require('./routers/base');
 const resourceRouter = require('./routers/resource');
 const authenticationRouter = require('./routers/authentication');
+
+const hbsDateHelper = require('helper-date');
 
 const app = express();
 const userDeserializationMiddleware = require('./middleware/deserialize-user');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+hbs.registerPartials('views/partials');
+hbs.registerHelper('date', hbsDateHelper);
 
 app.use(serveFavicon(path.join(__dirname, 'public/favicon.ico')));
 app.use(
@@ -66,7 +74,7 @@ app.use((error, req, res, next) => {
   console.log('There was an error somewhere within the application.');
   console.log(error);
   res.status(error.status || 500);
-  res.render('error');
+  res.render('error', { error });
 });
 
 module.exports = app;

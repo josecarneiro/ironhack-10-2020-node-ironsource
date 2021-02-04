@@ -16,9 +16,11 @@ body {
   max-width: 80em;
   margin: 0 auto;
   .navbar {
-    flex: 0 0 15em;
+    // flex: 0 0 15em;
+    width: 15em;
   }
   .page {
+    margin-left: 17em;
     flex: 1;
   }
 }
@@ -26,9 +28,24 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  p & {
+    text-decoration: underline;
+  }
 }
 
 img {
   max-width: 100%;
   display: block;
+}
+
+.btn-group {
+  display: flex;
+  margin-top: 2em;
+  .btn {
+    flex: 1;
+    justify-content: center;
+  }
+  .btn:not(:last-child) {
+    margin-right: 1em;
+  }
 }

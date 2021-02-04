@@ -1,6 +1,10 @@
 @import 'variables';
 
 .navbar {
+  position: fixed;
+  bottom: 0;
+  height: 100vh;
+  padding-top: 2em;
   display: flex;
   flex-direction: column;
   color: $grey;
@@ -19,5 +23,10 @@
     border: 0;
     text-align: left;
     box-shadow: 0 0;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
   }
 }

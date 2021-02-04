@@ -1,5 +1,12 @@
-{{#if user.picture}}
-  <img src="{{user.picture}}" alt="{{user.name}}" class="profile-picture" />
-{{/if}}
-<h1>Hello {{user.name}}</h1>
-<p>Your email is <strong>{{user.email}}</strong>.</p>
+<header class="profile-information">
+  {{#if profile.picture}}
+    <img src="{{profile.picture}}" alt="{{profile.name}}" class="profile-picture" />
+  {{/if}}
+  <h1>{{profile.name}}</h1>
+</header>
+{{!-- <p>Your email is <strong>{{profile.email}}</strong>.</p> --}}
+<ul class="resource-list">
+  {{#each resources}}
+    {{> resourceitem}}
+  {{/each}}
+</ul>
